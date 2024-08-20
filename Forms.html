@@ -1,0 +1,69 @@
+<!-- 
+ method- метод отправки данных на сервер(get или post)
+ action- адрес, на который передаются данные формы
+ RGB- Red,Green,Blue
+-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Form</title>
+</head>
+<body>
+<form action="#" method="post" enctype="application/x-www-form-urlencoded">
+
+<p>
+<label for="login">Логин:</label>
+<input id="login" name="login" type="text" placeholder="Login" maxlength="5" autofocus/>
+</p>
+
+<p>
+<label for="password">Пароль:</label>
+<input name="password" type="password" placeholder="Password"/> 
+</p>
+
+<p>
+<label for="Phone">Телефон:</label>
+<input name="Phone" type="tel" value="+7" (readonly) (disabled)/> 
+</p>
+
+<p>
+<label for="AGE">Возраст:</label>
+<input name="AGE" type="number" min="12" max="120" step="2"/> 
+</p>
+
+<p>
+<label for="rbutton">Нажми если не трус:</label>
+<input name="rbutton" type="radio"/> 
+</p>
+
+<p>
+<label for="chbox2">Полетели? да:</label>
+<input name="chbox2" type="checkbox" checked/> 
+</p>
+
+<p>
+<label for="chbox">Полетели? нет:</label>
+<input name="chbox" type="checkbox"/> 
+</p>
+
+<p>
+<label for="color">Цвет выбери:</label>
+<input name="color" type="color"/> 
+</p>
+
+<p>
+<label for="file">Файл:</label>
+<input name="file" type="file"/> 
+</p>
+
+<p>
+<label for="range">Ползунок:</label>
+<input name="range" type="range" min="1" max="10"/> 
+</p>
+
+<input type="submit" value="Войти"/>
+<input type="reset" value="Сбросить"/>
+
+</form>
+</body>
+</html>
