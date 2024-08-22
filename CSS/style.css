@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main-title{
+font-size: 20px;
+color: rgb(12, 179, 81);
+font-weight: 200;
+padding-bottom: 30px;
+}
+
+.container_1{
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5%;
+
+}
+
+.main-img{
+width: 200px;
+height: 200px;
+
+}
+
+.main-text{
+    font-size: 20px;
+
+}
+
+.container >p{
+    color:brown
+}
