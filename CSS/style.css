@@ -3,12 +3,16 @@ body{
     padding: 0;
 }
 
-.main-title{
+.main-title_1 {
 font-size: 20px;
 color: rgb(12, 179, 81);
 font-weight: 200;
 padding-bottom: 30px;
 }
+.main-title_1>p{
+color: blueviolet;
+}
+
 
 .container_1{
     margin-left: 20px;
@@ -28,6 +32,10 @@ height: 200px;
 
 }
 
-.container >p{
+.container_1 >p{
     color:brown
+}
+
+.container_2 {
+    color: blue;
 }
