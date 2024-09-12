@@ -82,5 +82,56 @@ let H = (x/y);
 alert("Плюс: " + S + "\n Минус: " + D + "\n Умножить: " + F + "\n Делить: " + H);
 */
 
+/*
+window.onload = function () {
+    function foo(){
+        let a = Number(prompt ("Введите число:"));
+        let x = Number(prompt ("Введите число:"));
+        const k=8;
+        let y =(8*x)+((a*x)**2);
+        alert("Ответ: "+ y);
+    }
+}
+*/
+
+
+function calc(a, b, operation){
+    if (operation == '+'){
+        return a + b;
+    }
+    else if (operation == '-'){
+        return a - b;
+    }
+    else if (operation == '*'){
+        return a * b;
+    }
+    else if (operation == '/'){
+        if (b == 0) {
+        return "Делить на ноль нельзя!";
+    }
+    else{
+        return a /b;
+    }
+    }
+    else{
+        return "Неизвестная операцияю Попробуйте еще раз!";
+    }
+}
+function calcPaS (){
+    let x = Number(document.getElementsByName("num1")[0].value);
+    let y = Number(document.getElementsByName("num2")[0].value);
+    let op = document.getElementsByName("operation")[0].value;
+    let res = calc(x, y, op);
+    alert("Результат операции: " + res)
+}
+window.onload = () => {
+    //let x = Number(prompt("Введите первое число:"));
+    //let y = Number(prompt("Введите второе число:"));
+    //let op =prompt("Введите тип операции (+,-,*,/)");
+    //let res = calc(x, y, op);
+    //alert("Результат вашей операции:" + res);
+    let buttonCalc = document.getElementById("calculator");
+    buttonCalc.addEventListener("click", calcPaS);
+}
 
 
