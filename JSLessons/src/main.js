@@ -94,7 +94,7 @@ window.onload = function () {
 }
 */
 
-
+/*
 function calc(a, b, operation){
     if (operation == '+'){
         return a + b;
@@ -133,5 +133,80 @@ window.onload = () => {
     let buttonCalc = document.getElementById("calculator");
     buttonCalc.addEventListener("click", calcPaS);
 }
+*/
 
+//let user = new Object();
+
+/*
+let user = {
+    name: "Denis",
+    age: 27,
+};
+*/
+
+//console.log(user.name);
+//console.log(user["age"]);
+
+//user.isAdmin = true;
+//delete user.age;
+
+//console.log(user);
+
+/*
+let fruit = prompt("Кайда favourite фрукты ?")
+
+let user1 = {
+    name: "Andery",
+    age: 23,
+    height: 180,
+    wight: 2,
+    hobby: "music",
+    profession: "Student",
+    city: "Saint-Peterburg",
+    alive: true,
+    [fruit]: "favourite",
+}
+
+console.log(user1);
+*/
+
+/*
+let rectangle = {
+    A: 0,
+    B: 0,
+    C: 0,
+    D: 0,
+};
+
+function set_rectangle(o) {
+    A = prompt("Введите координаты первой точки (через запятую):");
+    o.A = A;
+    B = prompt("Введите координаты первой точки (через запятую):");
+    o.B = B;
+    C = prompt("Введите координаты первой точки (через запятую):");
+    o.C = C;
+    D = prompt("Введите координаты первой точки (через запятую):");
+    o.D = D;
+}
+
+function rectangleInfo(o) {
+    alert(`Точка А: (${o.A})\nТочка B: (${o.B})\nТочка C: (${o.C})\nТочка D: (${o.D})`);
+}
+
+function getWidth(o) {
+    alert(`Ширина прямоугольника: ${Number(o.B[0]) - Number(o.A[0])}`);
+}
+
+function getHeight(o) {
+    alert(`Высота прямоугольника: ${Number(o.A[2]) - Number(o.D[2])}`);
+}
+
+function getArea(o) {
+    alert(`Плошадь  прямоугольника: ${Number(o.B[0]) - Number(o.A[0]) * (Number(o.A[2]) - Number(o.D[2])) }`);
+}
+
+function getPerimeter(o) {
+    alert(`Плошадь  прямоугольника: ${Number(o.B[0]) - Number(o.A[0]) * 2 + (Number(o.A[2]) - Number(o.D[2]) * 2) }`);
+}
+*/
 
