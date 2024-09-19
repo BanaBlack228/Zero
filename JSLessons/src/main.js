@@ -14,6 +14,8 @@ object - пердставление объекта языка JavaScript
 --x или x-- <=> x-1
 */
 
+//const JQwery = require("./JQwery");
+
 //alert("Hello from JavaScript!") - /*окно информационных сообщений*/;
 //confirm("Cогласны,Узнали?") - /*окно информационных сообщений*/;
 
@@ -210,3 +212,58 @@ function getPerimeter(o) {
 }
 */
 
+//JQwery и работа с ним!!!
+
+
+/*
+$(document).ready(function () {
+    $("button").click(function () {
+        $("p").toggle();
+    });
+});
+*/
+
+/*
+$(document).ready(function () {
+    //$("p").text("Текст установленный из JQuery");
+    //$("p").html("<h3>Текст установленный из JQuery</h3>");
+    //$("input").val("Значение поля, установленное из JQuery");
+    $("p").attr("style","font-size:24px;");
+    /* 
+    $("p").append("Hello")- Добавление значения в конец тега
+    $("p").prepend("Oh,man,Jesus Crist...") - добавление значение в начало тега
+    $("p").after("div");
+    $("p").before("div");
+    
+    div::after{
+    
+    }
+
+    div::before{
+    
+    }
+
+    $("p").remove()- удаление дочернего обьекта ( или указанного в методе)
+    $("p").empty() - удаление всех дочерних элементов
+
+    });
+    */
+
+    $(document).ready(function () {
+    // $("#callAjax").click(function(){
+    //$("#ajaxContent").load("../TEXT.TXT")
+        $.ajax({
+            url:"https://jsonplaceholder.typicode.com/todos/1",
+            type: "GET",
+            success: function (data) {
+                    for (key in data){
+                    $("#ajaxPicture").append(key + ":" + data[key] + "<br>");
+                    }
+                },
+            error: function(error) {
+                $("#ajaxPicture").text(eror);
+            },
+        });
+    });
+
+   
