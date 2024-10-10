@@ -249,6 +249,7 @@ $(document).ready(function () {
     });
     */
 
+/*
     $(document).ready(function () {
     // $("#callAjax").click(function(){
     //$("#ajaxContent").load("../TEXT.TXT")
@@ -265,5 +266,150 @@ $(document).ready(function () {
             },
         });
     });
+*/
 
-   
+//const user = new Object()
+
+/*
+const user = {}
+const car = {
+    brand: "BMW",
+    model: "M5 compitition"
+};
+
+user. name = "Misha";
+user.age = 32;
+
+console.log(user)
+console.log(user.name)
+console.log(user.age)
+console.log(user.phone)
+
+const breed = "Mops"
+const color = "Red"
+const dog = {breed,color}
+console.log(dog)
+
+const power = 220;
+const capacity = 2.5;
+
+const engine = {power,capacity}
+
+const carBMW = {
+    brand:"BMW",
+    model:"M8",
+    engine,
+    toGO: function(){
+        console.log(`${this.brand} ${this.model} GO!`)
+    }
+}
+
+
+const cat = {
+["color"]: "White",
+["breed"]: "Siam",
+["may"]: function(){
+    console.log("MAYYY")
+}
+
+}
+
+const home = {
+    "height wall": 3,
+    "area kitchen": 22
+}
+
+delete home["height wall"]
+delete home.areaKitchen
+
+console.log(home["height wall"])
+console.log(carBMW)
+carBMW.toGO()
+
+
+const carInfo = [
+    ["brand", "Audi"],
+    ["model", "A8"],
+    ["color", "Brown"],
+]
+const carInfoObject = Object.fromEntries(carInfo)
+console.log(carInfoObject)
+console.log(carInfoObject.brand)
+console.log(carInfoObject.model)
+console.log(carInfoObject.color)
+*/
+
+//console.log(this)
+
+
+// function testFunc() {
+//     let name = "Misha";
+//     console.log(this.name);
+// }
+
+//let name = "Alex";
+//testFunc();
+
+// const user = {
+//     name: "Misha",
+//     display: function(){
+//         console.log(this.name)
+//     }
+// }
+
+// let name = "Alex"
+// user.display();
+
+// function outerFunc(){
+//     let age = 100;
+//     console.log(this.age)
+// }
+
+// const manFirst = {
+//     age:50,
+//     display:outerFunc
+// }
+
+// const manSecond = {
+//     age:25,
+//     display:outerFunc
+// }
+
+
+
+// outerFunc()
+// manFirst.display()
+// manSecond.display()
+
+// const user = {
+//     name: "Misha",
+//     say: ()=> console.log(`My name is ${this.name}`)
+// }
+
+// var name = "Alex"
+// user.say()
+
+// const user = {
+//     name: "Misha",
+//     hello(){
+//         console.log("Hello")
+//         let say = ()=> console.log(`My name is ${this.name}`)
+//         say()
+//     }
+// }
+
+// user.hello()
+
+const country = {
+    name:"Russia",
+    language: "Rissian",
+    capital:{
+        name: "Moscow",
+        population: 13000000,
+        year:877
+    }
+}
+
+console.log(`Столица  - ${country.capital.name}`)
+console.log(`Население - ${country["capital"]["population"]}`)
+console.log(`Население - ${country.capital["year"]}`)
