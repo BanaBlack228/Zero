@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<script src="../src/JQwery.js" type="text/javascript"></script>
+<script src="../src/DOM.js" type="text/javascript"></script>
+<body>
+    <h2>1.Текстовое поле</h2>
+    <input type="text" name="textInputField" id="textInput">
+    <button id="btnText" onclick="displayText()">Показать текст</button>
+    <p id="textDisplay">Текст будет отображен здесь</p>
+
+    <h2>2.Чебоксы</h2>
+    <input type="checkbox" id="checkbox1">
+    <label for="checkbox1">Чебокс 1</label>
+
+     <input type="checkbox" id="checkbox2">
+    <label for="checkbox2">Чебокс 2</label>
+
+    <button ondblclick="showChekboxes()">Показать состояние чекбоксов</button>
+
+    <h2>3.Радио Кнопки</h2>
+    <input type="radio" name="radioGroup" id="radio1" value="Option 1">
+    <label for="radio1">Опция №1</label>
+
+    <input type="radio" name="radioGroup" id="radio2" value="Option 2">
+    <label for="radio2">Опция №2</label>
+
+    <button onclick="showRadio()">показать выбранную опцию</button>
+
+    <h2>4.Одиночный выбор</h2>
+    <select id="dropDown">
+        <option value="option1">Опция 1</option>
+        <option value="option2">Опция 2</option>
+        <option value="option3">Опция 3</option>
+        <option value="option4">Опция 4</option>
+    </select>
+    <button onclick="showSelected()">Паказать выбраную опцию</button>
+</body>
+</html>

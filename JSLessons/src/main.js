@@ -399,7 +399,7 @@ console.log(carInfoObject.color)
 // }
 
 // user.hello()
-
+/*
 const country = {
     name:"Russia",
     language: "Rissian",
@@ -413,3 +413,4 @@ const country = {
 console.log(`Столица  - ${country.capital.name}`)
 console.log(`Население - ${country["capital"]["population"]}`)
 console.log(`Население - ${country.capital["year"]}`)
+*/
