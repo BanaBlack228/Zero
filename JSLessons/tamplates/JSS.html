@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSS</title>
+</head>
+<body>
+<form action="" id="myForm" name="myform">
+    <input type="text" name="phone" id="phone">
+    <label for="phone">Телефон</label>
+
+    <input type="text" name="email" id="email">
+    <label for="email">Почта</label>
+
+    <input type="button" name="send" id="sendBth" value="Отправить">
+    <button type="submit">Отправить</button>
+
+</form>
+<form>
+    <div onclick="alert('Обработчик!')">
+  <em>Если вы кликните на <code>EM</code>, сработает обработчик на <code>DIV</code></em>
+</div>
+</form>
+<br>
+<br>
+<br>
+
+<form onclick="alert('form')">FORM
+  <div onclick="alert('div')">DIV
+    <p onclick="alert('p')">P</p>
+  </div>
+</form>
+
+</body>
+<script>
+function handleSubmit(event){
+event.preventDefault();
+const phoneField = document.querySelector('#phone').value
+const emailField = document.querySelector('#email').value
+
+console.log(`Phone - ${phoneField}, Email - ${emailField}`)
+console.log(`Тип события: ${event.type}`)
+console.log(`Цель: ${event.currentTarget}`)
+
+myForm.removeEventListener('submit', handleSubmit)
+
+}
+function hello(){
+    alert('Hello!')
+}
+
+function bye(){
+    alert('Bye!')
+}
+
+const myForm = document.querySelector('#myForm')
+const myButton = document.querySelector('#sendBth')
+
+myForm.addEventListener('submit', handleSubmit)
+
+myButton.addEventListener('click', handleSubmit)
+myButton.addEventListener('click', hello)
+//myButton.addEventListener('click', bye)
+myButton.addEventListener('click', ()=>{alert('bye')})
+myButton.removeEventListener('click', ()=>{alert('bye')})
+
+
+</script>
+</html>

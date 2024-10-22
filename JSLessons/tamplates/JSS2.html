@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSS2</title>
+</head>
+<body>
+ 
+</body>
+<script>
+// try{
+//     ...
+//     ...
+//     ...
+
+// }// код с ошибкой
+
+// catch(error){
+//     ...
+// }// код, обрабатывающий ошибку 
+
+// finally{
+//     ...
+//     ...
+// }// код, который будет выполнен в любом случае
+
+// try..catch
+// try..finally
+// try..catch..finally
+
+
+// function callSomeFunc(){
+//     console.log("Функция callSomeFunc")
+// }
+
+// try{
+//     callSomeFunc();
+//     console.log("Конец блока try")
+//     //..... не выполняется
+// }
+// catch(error){
+//     console.log('Возникла ошибка')
+//     console.log(error)
+// }
+
+// finally{
+//    console.log('Блок finally') 
+// }
+// console.log('Остальной код')
+
+function checkAge(age){
+    if(age>18){
+        console.log("Access approved")
+    }else{
+        throw new Error("Access denied!!!")
+        //throw "Access denied!!!"
+    }
+}
+ try{
+    checkAge(17);
+ }
+catch(error){
+    console.error("Ошибка", error.message)
+}
+
+</script>
+</html>
