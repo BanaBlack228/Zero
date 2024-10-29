@@ -1,0 +1,122 @@
+ <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormValidation</title>
+</head>
+<style>
+    #emailErrors{
+    background-color: blue;
+    color: rgb(167, 201, 18); 
+    display: none;
+    width: 15%;
+    text-size-adjust: 8px;
+    }
+</style>
+<form id="myForm" name="myForm">
+    <p>
+    <label for="phone">Телефон:</label>
+    <input type="text" name="phone" id="phone" maxlength="15" minlength="10" required>
+    <div id="phoneErrors"></div>
+    </p>
+    <p>
+    <label for="email">Почта:</label>
+    <input type="email" name="email" id="email" required>
+    <div id="emailErrors"></div>
+    </p>
+     <p>
+    <label for="age">Возраст:</label>
+    <input type="number" name="age" id="age" min="0" max="150">
+    <div id="ageErrors"></div>
+    </p>
+    <button type="submit" id="submit" name="submit">Отправить</button>
+</form>
+<body>
+<script>
+//Constraint Validation API
+//willVlidate - доступна ли валидация для элемента формы
+//validity -> ValidityState - обьект, содержащий информацию о валидации данного элемента формы
+//          Свойства ValidityState:
+//              valid - True (проходит валидацию) , false(не проходит валидацию)
+//              valueMissing - true (если в элементе с required отсутствует знаение)
+//              typeMismatch - true (если введенное значение не соответствует типу элемента формы)
+//              tooLong - true (если введенное значение привышает максимально допустимый лимит)
+//              tooShort - true (если значение меньше минимального допустимого значения)
+//              rangeOverflow - true (если значение превышает диапазон допустимых значениний)
+//              rangeUnderflow - true (если значение меньше диапазона допустимых значениний)
+//              сustomError - true (если при вводе была сгенерирована кастомная ошибка)
+//validationMessage - содержит сообщение об ошибке 
+
+//Методы Constraint Validation API
+//checkValidity() - проходит ли форма или элемент формы валидацию 
+//reportValidity() - то же, но отображает ошибки валидации
+//setCustomValidity() - настройка сообщения валидации
+
+const registerForm = document.myForm;
+const submit = registerForm.submit;
+submit.addEventListener('click', validate);
+
+function validate(){
+    //if(!registerForm.phone.validity.valid){}
+    if(!registerForm.phone.checkValidity()){
+        console.log("Phone is not valid")
+    }
+     if(!registerForm.age.checkValidity()){
+        console.log("Age is not valid")
+    }
+     if(!registerForm.email.checkValidity()){
+        console.log("Email is not valid")
+    }
+     if(registerForm.phone.validity.valueMissing){
+        registerForm.setCustomValidity.phone("Необходимо ввести номер телефона!")
+    }
+}
+
+
+
+const emailField = document.querySelector('#email')
+const ageField = document.querySelector('#age')
+const phoneField = document.querySelector('#phone')
+const emailErrors = document.querySelector('#emailErrors')
+
+emailField.addEventListener('change', validateEmail)
+ageField.addEventListener('change', ageChange)
+ageField.addEventListener('focus', ageFocus)
+phoneField.addEventListener('input', phoneEventInput)
+
+
+function validateEmail(){
+    if(!emailField.validity.valid){
+        emailErrors.textContent = emailField.validationMessage;
+        emailErrors.style.display = "block";
+    }else{
+        emailErrors.textContent = " ";
+        emailErrors.style.display = "none";
+    }
+    // console.log("Может валидироваться", emailField.willValidate);
+    // console.log("Значение отсутствует", emailField.validity.valueMissing);
+    // console.log("Значение валидно", emailField.validity.valid);
+    // console.log("Значение соответствует типу", emailField.validity.typeMismatch);
+    // console.log(emailField.validationMessage);
+}
+
+function ageChange(event){
+    console.log('Изменился возраст');
+    console.log(event)
+    console.log(event.target)
+
+}
+
+function ageFocus(){
+    console.log("Возраст")
+    console.log("В фокусе")
+}
+
+function phoneEventInput(event){
+    console.log('Ввели значение:',event.target.value)
+
+}
+</script>
+</body>
+</html>
