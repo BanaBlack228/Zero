@@ -1,0 +1,28 @@
+{
+  "Четверг, 12 декабря": {
+    "Ночь": {
+      "weather_temperature": "-1°",
+      "weather_type": "Ясно",
+      "weather_feeling": "-5°",
+      "weather_probability": "2%"
+    },
+    "Утро": {
+      "weather_temperature": "-2°",
+      "weather_type": "Пасмурно",
+      "weather_feeling": "-6°",
+      "weather_probability": "6%"
+    },
+    "День": {
+      "weather_temperature": "-3°",
+      "weather_type": "Ясно",
+      "weather_feeling": "-7°",
+      "weather_probability": "16%"
+    },
+    "Вечер": {
+      "weather_temperature": "-5°",
+      "weather_type": "Незначительная облачность",
+      "weather_feeling": "-10°",
+      "weather_probability": "5%"
+    }
+  }
+}
