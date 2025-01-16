@@ -66,4 +66,29 @@ car_BMW.turn(direction="left")
 car_BMW.turn(direction="right")
 
 
-print()
+@property
+def speed (self):
+    return  self.__speed
+def speed(self,value):
+    self.__speed = value
+
+# Дочерний класс грузовых машин
+class Truck(Car):
+    # указываем характеристики родительского класса и новые характеристики дочернего класса
+    def __init__(self, brand, model, year, power, capasity, axles, currence="RUB"):
+        # вызываем конструкцию родительского класса с его параметрами через функцию super()
+        super().__init__(brand, model, year, power, currence="RUB")
+        self.capasity = capasity
+        self.axles = axles
+
+def tilt_trailer(self):
+    print(f"{self.brand} {self.model} tilt trailer")
+
+def power_off(self):
+    super().power_off()
+    print("the method of Truck class")
+
+truck = Truck(brand="Volvo",model="2xx", year="2019", capasity=4000, axles=4,power=700)
+truck.power_on()
+
+
