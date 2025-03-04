@@ -1,4 +1,5 @@
 import psycopg2
+from unicodedata import category
 
 # объект соединения с БД
 try:
@@ -74,6 +75,7 @@ INSERT INTO products (name, description, price, category_id) VALUES
 #     cur.execute(insert_data_category)
 
 #Выбор всех товаров с их категориями
+
 query_1 = """
 SELECT p.id, p.name AS product_name, c.name AS category_name, p.price
 FROM products p
@@ -90,6 +92,7 @@ print(*result, sep='\n')
 conn.close()
 
 #Количество товаров по каждой категории
+
 query_2 = """
 SELECT c.name AS category_name, COUNT(p.id) AS product_count
 FROM categories c
@@ -102,6 +105,26 @@ with conn.cursor() as cur:
     results = cur.fatchall()
 
 print("Количество товаров по каждой категории:")
+print(*result, sep='\n')
+
+name = "Iphone 16"
+discription = "512GB"
+price = 95000
+category_id = 1
+
+query_3 = """
+INSERT INTO products (name, description, price, category_id) VALUES 
+(%s,%s,%s,%s);
+"""
+
+with conn.cursor() as cur:
+    cur.execute(query_3,(name,discription,price,category_id))
+
+with conn.cursor() as cur:
+    cur.execute(query_1)
+    result = cur.fatchall()
+
+print("Выбор всех товаров с их категориями:")
 print(*result, sep='\n')
 
 conn.close()
