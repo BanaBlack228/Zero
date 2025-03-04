@@ -69,6 +69,39 @@ INSERT INTO products (name, description, price, category_id) VALUES
 
 """
 
+# with conn.cursor() as cur:
+#     cur.execute(insert_data_product)
+#     cur.execute(insert_data_category)
+
+#Выбор всех товаров с их категориями
+query_1 = """
+SELECT p.id, p.name AS product_name, c.name AS category_name, p.price
+FROM products p
+JOIN categories c ON p.category_id = c.id;
+"""
+
 with conn.cursor() as cur:
-    cur.execute(insert_data_product)
-    cur.execute(insert_data_category)
+    cur.execute(query_1)
+    result = cur.fatchall()
+
+print("Выбор всех товаров с их категориям:")
+print(*result, sep='\n')
+
+conn.close()
+
+#Количество товаров по каждой категории
+query_2 = """
+SELECT c.name AS category_name, COUNT(p.id) AS product_count
+FROM categories c
+LEFT JOIN products p ON c.id = p.category_id
+GROUP BY c.name;
+"""
+
+with conn.cursor() as cur:
+    cur.execute(query_2)
+    results = cur.fatchall()
+
+print("Количество товаров по каждой категории:")
+print(*result, sep='\n')
+
+conn.close()
